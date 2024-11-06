@@ -2,10 +2,18 @@
 
 name: Update Contribution Chart
 
+# on:
+#   schedule:
+#     - cron: "0 0 * * *"  # Runs daily at midnight UTC
+#   workflow_dispatch:  # Allows manual triggering of the workflow
+
 on:
-  schedule:
-    - cron: "0 0 * * *"  # Runs daily at midnight UTC
-  workflow_dispatch:  # Allows manual triggering of the workflow
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
 
 jobs:
   update_chart:
