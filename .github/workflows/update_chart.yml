@@ -35,7 +35,7 @@ jobs:
 
       - name: Run contribution chart script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/generate_contribution_chart.py  # Updated path
           
       - name: Commit and push contribution chart
