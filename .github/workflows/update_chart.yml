@@ -26,7 +26,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.8"
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -45,3 +45,5 @@ jobs:
           git add images/contribution_chart.png
           git commit -m "Update contribution chart"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
