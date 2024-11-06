@@ -51,6 +51,10 @@ def generate_contribution_chart():
 
     print(f"Names: {names}")
     print(f"Commit counts: {commit_counts}")
+    
+    # save the plot to images folder
+    images_dir = "images"
+    os.makedirs(images_dir, exist_ok=True)
 
     # Step 4: Create a bar chart
     plt.figure(figsize=(10, 6))
@@ -60,7 +64,7 @@ def generate_contribution_chart():
     plt.title("Commits per Contributor Across All Branches")
     plt.gca().set_xlim(left=-0.5)  # Adjust x-axis to start at -0.5 to ensure it starts at 0
     plt.gca().yaxis.set_major_locator(plt.MaxNLocator(integer=True))  # Ensure y-axis has integer ticks
-    plt.savefig("contribution_chart.png")
+    plt.savefig(os.path.join(images_dir, "contribution_chart.png"))
     plt.show()
 
     return contributions
